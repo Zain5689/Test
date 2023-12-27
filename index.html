@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/Script.js"></script>
+    <!-- CSS -->
+    <style>
+        .hidden {
+            display: none;
+            transition: 0.1s;
+        }
+    </style>
+</head >
+<body>
+    <div class="container">
+
+        <div class="sidenav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="#contact">Contact</a>
+            <button class="dropdown-btn">
+                Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+            <a href="#contact">Search</a>
+        </div>
+
+
+
+        <div class="main">
+
+
+            <div class="navbar">
+                <a href="Page1.html">Home</a>
+                <a href="Page2.html">About</a>
+                <a href="Page3.html">Menu</a>
+                
+                <div class="subnav">
+                    <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#bring">Bring</a>
+                        <a href="#deliver">Deliver</a>
+                        <a href="#package">Package</a>
+                        <a href="#express">Express</a>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="#link1">Link 1</a>
+                        <a href="#link2">Link 2</a>
+                        <a href="#link3">Link 3</a>
+                        <a href="#link4">Link 4</a>
+                    </div>
+                </div>
+                <a href="#contact">Contact</a>
+            </div>
+            <br />
+            <div id="gallary">
+            <ul>
+                <li><a href="#" id="all">All</a></li>
+                <li><a href="#" id="side1">Side1</a></li>
+                <li><a href="#" id="side2">Side2</a></li>
+            </ul>
+            <div class="img">
+                <img class="all side1  hidden" src="images/slider1.jpg"/>
+                <img class="all side1  hidden" src="images/slider2.jpg" />
+                <img class="all side1  hidden" src="images/slider3.jpg" />
+                <img class="all side2  hidden" src="images/slider4.jpg" />
+                <img class="all side2  hidden" src="images/slider5.jpg" />
+                <img class="all side2  hidden" src="images/slider6.jpg" />
+         </div>
+           </div>
+            <br />
+        </div>
+    </div>
+   <script>
+    $(document).ready(function () {
+    // Show images one by one when the page loads
+    $('.img img').each(function (index) {
+        $(this).delay(300 * index).fadeIn(500);
+    });
+
+    // Show all images when the "All" button is clicked
+    $('#all').click(function (e) {
+        e.preventDefault();
+        $('.img img').fadeIn(300);
+    });
+
+    // Show 3 images when the "Side1" button is clicked
+    $('#side1').click(function (e) {
+        e.preventDefault();
+        $('.img img').hide();
+        $('.side1').slice(0, 3).fadeIn(300);
+    });
+
+    // Show 3 images when the "Side2" button is clicked
+    $('#side2').click(function (e) {
+        e.preventDefault();
+        $('.img img').hide();
+        $('.side2').slice(0, 3).fadeIn(300);
+    });
+});
+   </script>
+</body>
+</html>
